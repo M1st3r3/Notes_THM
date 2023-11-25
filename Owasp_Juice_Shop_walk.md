@@ -1,6 +1,6 @@
 ## All Flags i did
 
-1 - Log into admin Account with SQLinjection  -> ['or 1=1 --]
+1 - Log into admin Account with SQLinjection  -> ['or 1=1 --] \n
 2 - Same thing to connect into Bender Account
 3 - Used Burpsuite with Intruder and best1050.txt wordlist to find admin password -> admin123
 4 - Reset Jim password with OSINT question -> Samuel (Star Trek)
