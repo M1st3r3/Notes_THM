@@ -32,3 +32,5 @@ cat /etc/os-release
 
 **Verify Intergrety in 3rd library:** [SriHash](https://www.srihash.org/)
 
+**To Put Space in an HTTP Request(comment)** : ```&23```
+
