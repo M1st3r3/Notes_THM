@@ -4,47 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "3b7c486d1671d797",
+        "id": "2fc592146cf6c673",
         "type": "tabs",
         "children": [
           {
-            "id": "3050d89acb6665ea",
+            "id": "7c5bdf8922907bfc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Usefull Command.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "54b0aef62fe2e584",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Owasp_Juice_Shop_walk.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1ac5a327f1e8239e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Advent of Code 2023.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Advent of Code 2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Advent of Code 2023.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Advent of Code 2023.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -171,18 +138,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1ac5a327f1e8239e",
+  "active": "7c5bdf8922907bfc",
   "lastOpenFiles": [
-    "Owasp_Juice_Shop_walk.md",
-    "Advent of Code 2023.md",
-    "Git - GitHub.md",
-    "RCE on File Upload.md",
-    "OWASP_TOP_10_2021.md",
-    "Client & Server Filtering on File Upload.md",
+    "Advent of Cyber 2023.md",
+    "Pasted image 20231202155637.png",
+    "Attack Order.md",
+    "Table des Matières/Pasted image 20231202155417.png",
+    "Table des Matières/Image/Pasted image 20231202155348.png",
+    "Table des Matières/Image/Pasted image 20231202155307.png",
     "Usefull Command.md",
+    "Client & Server Filtering on File Upload.md",
+    "PHP Monkey Reverse Shell.md",
+    "RCE on File Upload.md",
+    "Table des Matières/Image/Pasted image 20231201194130.png",
+    "Table des Matières/Image/Pasted image 20231201194124.png",
+    "Table des Matières/Image/Pasted image 20231201194119.png",
+    "Table des Matières/Image/Pasted image 20231201193124.png",
+    "Table des Matières/Image/Pasted image 20231201193118.png",
+    "Table des Matières/Image/Pasted image 20231201193113.png",
+    "Untitled.md",
+    "Owasp_Juice_Shop_walk.md",
+    "Git - GitHub.md",
+    "OWASP_TOP_10_2021.md",
     "OWASP TOP 10.md",
     "Burpsuite.md",
-    "Attack Order.md",
     "Linux.md",
     "Metasploit.md",
     "Hydra.md",
@@ -193,23 +172,10 @@
     "SMB.md",
     "README.md",
     "MySQL.md",
-    "Table des Matières/Image/Pasted image 20231118164249.png",
-    "Table des Matières/Image/7e11c5dec4dba4336927aa7561e5c793.gif",
-    "Table des Matières/Image/Pasted image 20231107002813.png",
-    "Table des Matières/Image/Pasted image 20231107221102.png",
-    "Table des Matières/Image/Pasted image 20231114003108.png",
-    "Table des Matières/Image/Pasted image 20231114003145.png",
-    "Table des Matières/Image/Pasted image 20231114005241.png",
-    "Table des Matières/Image/Pasted image 20231114011757.png",
-    "Table des Matières/Image/Pasted image 20231118001833.png",
     "msfvenom.md",
     "Table des Matières/Topics.md",
-    "Table des Matières/Image/fb2a8717ae887eda024a7791d83cefaf.gif",
     "Untitled",
     "SMTP(SIMPLE MAIL TRANSFERT PROTOCOL).md",
-    "NFS.md",
-    "2023-11-12.md",
-    "test.md",
     "Table des Matières",
     "Image/Table Des Matières",
     "Table des Matières/Image"

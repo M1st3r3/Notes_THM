@@ -34,3 +34,21 @@ cat /etc/os-release
 
 **To Put Space in an HTTP Request(comment)** : ```&23```
 
+If a directory of uploaded files is blocked you can still access the file if you know its name (ex: you dropped an reverse shell)
+
+---
+
+Steps for a file exploitation
+- See the technology used by the website ( Manually or Burpsuite Header -> (server,x-powered-by) )
+- Inspect the source code on the client side of the upload page see if there are any client-side blocking
+- Upload a normal file and see how the website react , try to see where the file is uploaded 
+- Bypass the client side filtering and see if there are any server side filtering
+
+-> To discover server filtering:
+- If you can successfully upload a file with a totally invalid file extension (e.g. `testingimage.invalidfileextension`) then the chances are that the server is using an extension _blacklist_ to filter out executable files. If this upload fails then any extension filter will be operating on a whitelist.
+
+- Try re-uploading your originally accepted innocent file, but this time change the magic number of the file to be something that you would expect to be filtered. If the upload fails then you know that the server is using a magic number based filter.
+
+- As with the previous point, try to upload your innocent file, but intercept the request with Burpsuite and change the MIME type of the upload to something that you would expect to be filtered. If the upload fails then you know that the server is filtering based on MIME types.
+
+- Enumerating file length filters is a case of uploading a small file, then uploading progressively bigger files until you hit the filter. At that point you'll know what the acceptable limit is. If you're very lucky then the error message of original upload may outright tell you what the size limit is. Be aware that a small file length limit may prevent you from uploading the reverse shell we've been using so far.

